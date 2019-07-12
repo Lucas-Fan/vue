@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="app">
+        <!-- 使用v-cloak可以解决插值表达式闪烁的问题 -->
+        <p v-cloak>++++{{ msg }}--------</p>
+        <!-- 默认 v-text是没有闪烁问题的 -->
+        <!-- v-text会覆盖元素中原本的内容，但是插值表达式不会 -->
+        <h4 v-text="msg">dddddddddd</h4>
+        <div>{{ msg2 }}</div>
+        <div v-text="msg2"></div>
+        <div v-html="msg2"></div>
+
+
+        <!-- v-bind是vue中提供用于绑定属性的指令，“”里面可以写表达式 -->
+        <input type="button" value="按钮" v-bind:title="mytitle + '123'" @mouseover="show">
+        <!-- 简写 -->
+        <input type="button" value="按钮" :title="mytitle + '123'" v-on:click="show">       
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                msg: '123',
+                msg2: '<h1>哈哈哈哈哈哈</h1>',
+                mytitle: '这是一个自己定义的title',
+            },
+            methods:{
+                show:function(){
+                    alert('hello world',)
+                }
+            },
+        })
+    </script>
+</body>
+</html>
+
+<!-- 如何定义一个基本的vue代码结构 -->
+<!-- 插值表达式和 v-text -->
+<!-- v-cloak -->
+<!-- v-html -->
+<!-- v-bind   缩写 :   vue提供的属性绑定机制-->
+<!-- v-on     缩写 @   vue提供的事件绑定机制 -->

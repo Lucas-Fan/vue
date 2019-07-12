@@ -1,0 +1,52 @@
+<html>
+<head>
+    <script>
+    var beans = document.querySelector('#beans');
+    var count = document.querySelector('.beancount');
+
+    count.textContent = beans.value;
+
+    beans.oninput = function() {
+    count.textContent = beans.value;
+    }    
+    </script>
+</head>
+<body>
+<div>
+        <button type="submit">
+                This a <br><strong>submit button</strong>
+        </button>
+            
+        <input type="submit" value="This is a submit button">
+        <input type="number" name="age" id="age" min="1" max="10" step="2">
+        <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+</div>
+<div>
+    <label for="beans">How many beans can you eat?</label>
+    <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+    <span class="beancount"></span>
+</div>
+<div>
+    <label for="myDate">When are you available this summer?</label>
+    <input type="date" name="myDate" min="2013-06-01" max="2013-08-31" id="myDate">
+</div>
+<div>
+    <input type="color" name="color" id="color">
+</div>
+<div>
+    <input type="file" name="file" id="file" accept="image/*" multiple>
+</div>
+<div>
+    <input type="hidden" id="timestamp" name="timestamp" value="1286705410">
+</div>
+<div>
+    <input type="image" alt="Click me!" src="my-img.png" width="80" height="30" />
+</div>
+<div>
+    <progress max="100" value="75">75/100</progress>
+</div>
+<div>
+    <meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+</div>
+</body>
+</html>
