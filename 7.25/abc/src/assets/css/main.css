@@ -1,0 +1,15 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.pad-36{
+  padding: 36px;
+}
+.mar-t-16{
+  margin-top: 16px;
+}
+.mar-b-36{
+  margin-bottom: 36;
+}
+
