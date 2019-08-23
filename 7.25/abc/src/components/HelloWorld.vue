@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-
+    <div style="width: 100%;height: 50px">
+      <input type="text" v-model="text" style="width: 80%;height: 50px">
+      <span class="icon-add_circle" style="width: 20%;height: 50px;font-size: 50px;color: aqua"></span>
+    </div>
     <div v-for="(item,index) in list" :key="index">
       <el-divider></el-divider>
       <div  class="pad-36">
@@ -87,9 +90,12 @@ export default {
       }).catch((errno) => {
         console.log(errno)
       })
+    },
+    comment () {
+
     }
   },
-  mounted () {
+  created () {
     this.getData()
   }
 }
